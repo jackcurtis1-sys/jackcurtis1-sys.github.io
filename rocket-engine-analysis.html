@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A thermodynamics paper by Jack Curtis and Chris West exploring Brayton-cycle efficiency, thrust, nozzle performance, and maximum specific work.">
+    <title>Rocket Engine Analysis | Jack Curtis</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body class="case-study rocket-study">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header is-scrolled">
+        <nav class="nav container" aria-label="Main navigation">
+            <a class="nav__brand" href="index.html" aria-label="Jack Curtis, home"><span class="nav__brand-mark" aria-hidden="true">JC</span><span>Jack Curtis</span></a>
+            <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu"><span class="sr-only">Open navigation</span><span></span><span></span><span></span></button>
+            <div class="nav__menu" id="nav-menu"><a href="#overview">Overview</a><a href="#analysis">Analysis</a><a href="#tradeoffs">Tradeoffs</a><a class="nav__github" href="assets/papers/rocket-engine-analysis.pdf" target="_blank" rel="noopener noreferrer">Full Paper <span aria-hidden="true">↗</span></a></div>
+        </nav>
+    </header>
+    <main id="main-content">
+        <section class="case-hero capstone-hero" id="top">
+            <div class="container case-hero__grid">
+                <div class="case-hero__copy reveal">
+                    <a class="back-link" href="index.html#projects">← All projects</a>
+                    <p class="eyebrow">Carleton College · Thermodynamics · November 2024</p>
+                    <h1>Rocket Engine Analysis</h1>
+                    <p class="case-hero__subtitle">Connecting thermodynamic cycles to propulsion performance.</p>
+                    <p class="case-hero__intro">A paper coauthored with Chris West examining how pressure ratio, temperature limits, and exhaust momentum shape engine performance. The analysis develops ideal Brayton-cycle relationships, then considers the engineering losses that separate an ideal model from a working engine.</p>
+                    <ul class="tag-list" aria-label="Project topics"><li>Thermodynamics</li><li>Brayton Cycle</li><li>Propulsion</li><li>Nozzle Expansion</li></ul>
+                    <div class="hero__actions"><a class="button button--primary" href="assets/papers/rocket-engine-analysis.pdf" target="_blank" rel="noopener noreferrer">Read full paper ↗</a><a class="button button--secondary" href="#analysis">Explore the analysis</a></div>
+                </div>
+                <figure class="capstone-figure capstone-figure--hero reveal">
+                    <button class="image-button" type="button" data-lightbox="assets/images/rocket/rocket-title-page.png" data-caption="Rocket Engine Analysis by Jack Curtis and Chris West, Carleton College, November 25, 2024."><img src="assets/images/rocket/rocket-title-page.png" alt="First page of Rocket Engine Analysis by Jack Curtis and Chris West" width="1190" height="1540"></button>
+                    <figcaption><span>Original paper</span><strong>Jack Curtis &amp; Chris West</strong><small>November 25, 2024 · 7 pages · click to expand</small></figcaption>
+                </figure>
+            </div>
+        </section>
+        <section class="metric-strip" aria-label="Project at a glance"><div class="container capstone-metrics reveal"><div><strong>Analytical</strong><span>Approach</span></div><div><strong>7 pages</strong><span>Coauthored paper</span></div><div><strong>5 sections</strong><span>Technical development</span></div><div><strong>2024</strong><span>Completed study</span></div></div></section>
+
+        <section class="section" id="overview">
+            <div class="container intro-grid">
+                <article class="prose reveal"><p class="eyebrow">Project overview</p><h2>From heat input to useful output.</h2><p class="lead">How do the conditions inside an engine determine its efficiency, thrust, and power?</p><p>The paper connects component-level descriptions to a thermodynamic model: compression, heat addition, expansion, and heat rejection. It uses ideal-gas and isentropic relationships to derive thermal efficiency, a momentum balance to describe thrust, and differentiation to identify the operating point for maximum specific work.</p><p>This is an analytical literature study. Its outcomes are derivations and a synthesis of engineering considerations; it does not report a built engine or experimental performance measurements.</p></article>
+                <article class="prose reveal"><p class="eyebrow">Model scope</p><h2>Distinguishing the engine architectures.</h2><p>The original paper is titled <em>Rocket Engine Analysis</em> and discusses both rocket hardware and air-breathing turbine engines. Its compressor–combustor–turbine cycle analysis describes an ideal Brayton gas-turbine model.</p><p>A rocket carries its oxidizer onboard, so its thrust balance has no atmospheric inlet-momentum term. The cycle relationships below are labeled for the Brayton model; the rocket thrust relationship is shown separately to make that distinction explicit.</p><p>Technical context: <a class="rocket-source" href="https://www.grc.nasa.gov/www/k-12/airplane/brayton.html" target="_blank" rel="noopener noreferrer">NASA: Brayton cycle ↗</a> and <a class="rocket-source" href="https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/rocket-thrust-equation/" target="_blank" rel="noopener noreferrer">rocket thrust ↗</a>.</p></article>
+            </div>
+        </section>
+
+        <section class="section section--surface" id="analysis">
+            <div class="container">
+                <div class="section-heading reveal"><div><p class="eyebrow">Technical analysis</p><h2>Three performance questions.</h2></div><p>The central relationships connect an ideal cycle's pressure ratio, exhaust momentum, and temperature limits to different measures of performance.</p></div>
+                <div class="physics-grid">
+                    <article class="physics-card reveal"><span>01 · Ideal Brayton cycle</span><h3>What sets thermal efficiency?</h3><div class="math-display math-display--compact" aria-label="Thermal efficiency equals one minus pressure ratio raised to negative gamma minus one over gamma"><math display="block"><msub><mi>η</mi><mi>th</mi></msub><mo>=</mo><mn>1</mn><mo>−</mo><msubsup><mi>r</mi><mi>p</mi><mrow><mo>−</mo><mfrac><mrow><mi>γ</mi><mo>−</mo><mn>1</mn></mrow><mi>γ</mi></mfrac></mrow></msubsup></math></div><p>For constant specific heats and ideal isentropic compression and expansion, thermal efficiency increases with pressure ratio r<sub>p</sub> = p<sub>2</sub>/p<sub>1</sub>. Here γ is the ratio of specific heats. This is cycle thermal efficiency, distinct from overall propulsive efficiency.</p></article>
+                    <article class="physics-card reveal"><span>02 · Rocket momentum balance</span><h3>What produces thrust?</h3><div class="math-display math-display--compact" aria-label="Thrust equals mass flow times exhaust velocity plus exit pressure minus ambient pressure times exit area"><math display="block"><mi>F</mi><mo>=</mo><mover><mi>m</mi><mo>˙</mo></mover><msub><mi>V</mi><mi>e</mi></msub><mo>+</mo><mo>(</mo><msub><mi>p</mi><mi>e</mi></msub><mo>−</mo><msub><mi>p</mi><mi>a</mi></msub><mo>)</mo><msub><mi>A</mi><mi>e</mi></msub></math></div><p>Rocket thrust combines exhaust momentum with a pressure contribution at the nozzle exit. The paper develops the broader air-breathing balance, which also subtracts incoming air momentum. Pressure thrust vanishes only when exit and ambient pressures match.</p></article>
+                    <article class="physics-card reveal"><span>03 · Maximum Brayton specific work</span><h3>Where is work output largest?</h3><div class="math-display" aria-label="Optimal compressor exit temperature equals the square root of inlet temperature times turbine inlet temperature"><math display="block"><msub><mi>T</mi><mrow><mn>2</mn><mo>,</mo><mi>opt</mi></mrow></msub><mo>=</mo><msqrt><msub><mi>T</mi><mn>1</mn></msub><msub><mi>T</mi><mn>3</mn></msub></msqrt></math></div><p>With inlet temperature T<sub>1</sub> and maximum cycle temperature T<sub>3</sub> fixed, differentiating net specific work gives this optimum compressor exit temperature. The result assumes an ideal cycle with constant specific heats.</p></article>
+                </div>
+                <figure class="capstone-figure rocket-cycle-figure reveal"><button class="image-button" type="button" data-lightbox="assets/images/rocket/brayton-cycle.png" data-caption="Figure 2 from the original paper: jet-engine flow path, pressure–volume cycle, and the compressor–turbine work balance. Original source references are retained in the PDF."><img loading="lazy" src="assets/images/rocket/brayton-cycle.png" alt="Figure 2 from the paper showing a jet-engine flow path, Brayton pressure-volume diagram, and compressor-turbine work balance" width="1223" height="350"></button><figcaption><span>From the paper · Figure 2</span><strong>The ideal Brayton model</strong><small>Component processes, cycle states, and work transfer · click to expand · references in the full paper</small></figcaption></figure>
+            </div>
+        </section>
+
+        <section class="section" id="tradeoffs">
+            <div class="container intro-grid">
+                <article class="prose reveal"><p class="eyebrow">Central takeaway</p><h2>Maximum efficiency and maximum work occur at different operating points.</h2><p class="lead">A higher pressure ratio improves ideal Brayton thermal efficiency, but does not indefinitely increase net work.</p><p>At fixed inlet and peak temperatures, increasing compression raises the compressor exit temperature and reduces the heat that can be added. As that temperature approaches the cycle maximum, both heat input and net work approach zero.</p><p>The maximum-work condition balances compressor demand against turbine output. For a fixed mass flow rate, maximizing specific work also maximizes ideal net shaft power.</p><a class="button button--secondary" href="assets/papers/rocket-engine-analysis.pdf#page=5" target="_blank" rel="noopener noreferrer">Read the derivation · page 5 ↗</a></article>
+                <article class="reveal"><p class="eyebrow">Beyond the ideal model</p><h2>Engineering the losses.</h2><ul class="learning-list learning-list--top"><li><strong>Irreversibility:</strong> real compression and expansion produce entropy and reduce useful work.</li><li><strong>Thermal limits:</strong> material temperatures constrain the maximum cycle temperature, while heat transfer affects the energy balance.</li><li><strong>Cycle modifications:</strong> the paper discusses intercooling, regeneration, and reheating. Their efficiency effects depend on the full cycle configuration.</li><li><strong>Propellant delivery:</strong> rocket turbopumps supply fuel and oxidizer at the pressures required by the combustion chamber.</li><li><strong>Nozzle expansion:</strong> exhaust velocity and exit pressure both contribute to thrust, making ambient conditions part of nozzle performance.</li></ul></article>
+            </div>
+        </section>
+
+        <section class="section section--surface"><div class="container intro-grid"><article class="prose reveal"><p class="eyebrow">Skills developed</p><h2>Building a thermodynamic argument.</h2><p class="lead">The work connects physics, mathematical derivation, and engineering interpretation.</p><p>It draws together ideal-gas relations, energy and momentum balances, optimization by differentiation, and technical literature. Coauthoring the paper also required organizing those ideas into a shared explanation of propulsion performance.</p><a class="button button--secondary" href="cfd-project.html">Explore my CFD work →</a></article><figure class="capstone-figure reveal"><button class="image-button" type="button" data-lightbox="assets/images/rocket/modified-cycle.png" data-caption="Figure 3 from the original paper: a temperature–entropy diagram illustrating intercooling, regeneration, and reheating. Original source references are retained in the PDF."><img loading="lazy" src="assets/images/rocket/modified-cycle.png" alt="Temperature-entropy diagram of a modified Brayton cycle with intercooling, regeneration, and reheating" width="499" height="434"></button><figcaption><span>From the paper · Figure 3</span><strong>Extending the ideal cycle</strong><small>Intercooling, regeneration, and reheating · click to expand · references in the full paper</small></figcaption></figure></div></section>
+
+        <section class="project-cta"><div class="container reveal"><p class="eyebrow">Full paper · Jack Curtis &amp; Chris West</p><h2>Explore the complete analysis.</h2><p>Read the original seven-page paper, including the derivations, figures, engineering discussion, and bibliography.</p><div class="hero__actions"><a class="button button--primary" href="assets/papers/rocket-engine-analysis.pdf" target="_blank" rel="noopener noreferrer">Open full paper ↗</a><a class="button button--secondary" href="assets/papers/rocket-engine-analysis.pdf" download>Download PDF ↓</a></div></div></section>
+    </main>
+    <footer class="site-footer"><div class="container site-footer__inner"><p>© <span id="current-year">2026</span> Jack Curtis</p><p>Physics · Thermodynamics · Propulsion</p><a href="#top">Back to top ↑</a></div></footer>
+    <dialog class="lightbox" aria-label="Expanded paper figure"><button class="lightbox__close" type="button" aria-label="Close expanded image">×</button><img alt=""><p></p></dialog>
+</body>
+</html>

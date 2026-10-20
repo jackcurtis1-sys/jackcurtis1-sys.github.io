@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A modular MATLAB CFD suite progressing from numerical foundations to the complete two-dimensional compressible Navier–Stokes equations.">
+    <title>MATLAB CFD Solver Suite | Jack Curtis</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body class="case-study">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header is-scrolled">
+        <nav class="nav container" aria-label="Main navigation">
+            <a class="nav__brand" href="index.html" aria-label="Jack Curtis, home"><span class="nav__brand-mark" aria-hidden="true">JC</span><span>Jack Curtis</span></a>
+            <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu"><span class="sr-only">Open navigation</span><span></span><span></span><span></span></button>
+            <div class="nav__menu" id="nav-menu"><a href="#overview">Overview</a><a href="#progression">Progression</a><a href="#results">Results</a><a href="#validation">Validation</a><a class="nav__github" href="https://github.com/jackcurtis1-sys/MATLABCFD" target="_blank" rel="noopener noreferrer">Source <span aria-hidden="true">↗</span></a></div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="case-hero" id="top">
+            <div class="container case-hero__grid">
+                <div class="case-hero__copy reveal">
+                    <a class="back-link" href="index.html#projects">← All projects</a>
+                    <p class="eyebrow">Independent engineering project · MATLAB</p>
+                    <h1>Computational Fluid Dynamics Solver Suite</h1>
+                    <p class="case-hero__subtitle">From numerical methods to the two-dimensional compressible Navier–Stokes equations.</p>
+                    <p class="case-hero__intro">A modular CFD environment developed independently while working through John D. Anderson Jr.’s <em>Computational Fluid Dynamics: The Basics with Applications</em>. It advances from foundational discretization to nozzle flow, supersonic expansion, viscous Couette flow, and a complete compressible-flow solver.</p>
+                    <ul class="tag-list" aria-label="Project technologies"><li>MATLAB</li><li>CFD</li><li>Compressible Flow</li><li>Navier–Stokes</li><li>Numerical Methods</li></ul>
+                    <div class="hero__actions"><a class="button button--primary" href="https://github.com/jackcurtis1-sys/MATLABCFD" target="_blank" rel="noopener noreferrer">View source on GitHub ↗</a><a class="button button--secondary" href="#results">Explore results</a></div>
+                </div>
+                <button class="case-hero__figure image-button reveal" type="button" data-lightbox="assets/images/cfd/prandtl-meyer-expansion.png" data-caption="Prandtl–Meyer expansion: Mach-number contours on a boundary-fitted grid.">
+                    <img src="assets/images/cfd/prandtl-meyer-expansion.png" alt="Mach-number contours spreading from a convex corner in a two-dimensional Prandtl–Meyer expansion" width="1486" height="981">
+                    <span><strong>Prandtl–Meyer expansion</strong><small>Mach-number field · click to expand</small></span>
+                </button>
+            </div>
+        </section>
+
+        <section class="metric-strip" aria-label="Project at a glance">
+            <div class="container metrics reveal">
+                <div><strong>258</strong><span>MATLAB files</span></div><div><strong>377</strong><span>Tests passed</span></div><div><strong>37</strong><span>Examples</span></div><div><strong>4</strong><span>Application solver families</span></div><div><strong>6,488</strong><span>Production source lines</span></div><div><strong>7–10</strong><span>Application chapters</span></div>
+            </div>
+        </section>
+
+        <section class="section" id="overview">
+            <div class="container intro-grid">
+                <article class="prose reveal"><p class="eyebrow">Why I built it</p><h2>Learning CFD by building the machinery.</h2><p class="lead">My physics studies—especially senior work in supersonic compressible inviscid flow—led me toward fluid dynamics, high-speed aerodynamics, propulsion, and simulation.</p><p>I wanted to move beyond analytical solutions and understand how governing equations become reliable numerical software. This project became a self-directed study in translating physical models into discrete algorithms, validating them, and organizing them into reusable engineering tools.</p></article>
+                <article class="reveal"><p class="eyebrow">What I learned</p><h2>Connecting physics, numerics, and software.</h2><ul class="learning-list learning-list--top"><li>Translate PDEs and boundary conditions into computational algorithms.</li><li>Connect physical behavior with truncation error, stability, and convergence.</li><li>Separate reusable numerical infrastructure from model-specific physics.</li><li>Validate with exact solutions where available—and use honest diagnostic hierarchies where they are not.</li><li>Trace the progression from model equations and Euler flow to complete Navier–Stokes.</li></ul></article>
+            </div>
+        </section>
+
+        <section class="section section--surface" id="progression">
+            <div class="container"><div class="section-heading reveal"><div><p class="eyebrow">Solver progression</p><h2>Complexity, built in layers.</h2></div><p>Each stage adds new physics or numerical demands; earlier tools become infrastructure for the application solvers that follow.</p></div>
+                <ol class="progression">
+                    <li class="reveal"><span>01</span><div><p>Numerical foundations</p><h3>Model PDEs &amp; discrete operators</h3></div><p>Finite differences, interpolation, RK4, linear algebra, CFL control, error norms, diffusion, and elliptic relaxation.</p></li>
+                    <li class="reveal"><span>02</span><div><p>Transport</p><h3>Linear advection</h3></div><p>Periodic wave transport with method of lines, Lax–Wendroff, and MacCormack; checked against the analytical translation.</p></li>
+                    <li class="reveal"><span>03</span><div><p>Chapter 7</p><h3>Quasi-1-D nozzle flow</h3></div><p>Euler equations in primitive and conservative form, choked and subsonic flow, then a captured normal shock with artificial viscosity.</p></li>
+                    <li class="reveal"><span>04</span><div><p>Chapter 8</p><h3>Prandtl–Meyer expansion</h3></div><p>Steady 2-D Euler equations marched in space on a boundary-fitted grid, including flux transforms and Abbett wall correction.</p></li>
+                    <li class="reveal"><span>05</span><div><p>Chapter 9</p><h3>Viscous Couette flow</h3></div><p>Momentum diffusion with implicit Crank–Nicolson, plus pressure correction and SIMPLE on a staggered grid.</p></li>
+                    <li class="reveal"><span>06</span><div><p>Chapter 10</p><h3>Compressible Navier–Stokes</h3></div><p>Laminar Mach-4 flat-plate flow combining compressibility, viscous stresses, heat conduction, and explicit MacCormack marching.</p></li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="section" id="results">
+            <div class="container"><div class="section-heading reveal"><div><p class="eyebrow">Featured results</p><h2>Physics made visible.</h2></div><p>Curated solver outputs generated by the repository—not stock imagery. Select any figure for a closer view.</p></div>
+                <div class="result-grid">
+                    <figure class="result-card result-card--wide reveal"><button class="image-button" type="button" data-lightbox="assets/images/cfd/mach4-flat-plate.png" data-caption="Mach-4 viscous flat plate: Mach-number contours from the complete two-dimensional compressible Navier–Stokes solver."><img loading="lazy" src="assets/images/cfd/mach4-flat-plate.png" alt="Mach-number contours showing a developing viscous boundary layer above a Mach-4 flat plate" width="1460" height="983"></button><figcaption><span>Complete Navier–Stokes</span><h3>Mach-4 viscous flat plate</h3><p>The explicit MacCormack solution resolves the developing compressible boundary layer while including viscous stresses, Sutherland-law viscosity, and Fourier heat conduction.</p></figcaption></figure>
+                    <figure class="result-card reveal"><button class="image-button" type="button" data-lightbox="assets/images/cfd/nozzle-shock.png" data-caption="Shock-containing nozzle: Mach number and normalized pressure through a quasi-one-dimensional nozzle."><img loading="lazy" src="assets/images/cfd/nozzle-shock.png" alt="Mach and normalized pressure curves through a quasi-one-dimensional nozzle with a captured normal shock" width="1548" height="976"></button><figcaption><span>Shock capturing</span><h3>Quasi-1-D nozzle</h3><p>The flow accelerates through Mach 1, becomes supersonic, and crosses a numerically captured normal shock with the corresponding pressure rise.</p></figcaption></figure>
+                    <figure class="result-card reveal"><button class="image-button" type="button" data-lightbox="assets/images/cfd/prandtl-meyer-expansion.png" data-caption="Prandtl–Meyer expansion: Mach-number contours on a boundary-fitted grid."><img loading="lazy" src="assets/images/cfd/prandtl-meyer-expansion.png" alt="Mach-number contours showing an expansion fan issuing from a convex wall corner" width="1486" height="981"></button><figcaption><span>Supersonic Euler flow</span><h3>Prandtl–Meyer expansion</h3><p>A boundary-fitted space march captures the expansion fan and increasing Mach number as the fully supersonic flow turns around a convex corner.</p></figcaption></figure>
+                    <figure class="result-card result-card--wide reveal"><button class="image-button" type="button" data-lightbox="assets/images/cfd/couette-flow.png" data-caption="Implicit Couette flow: numerical solution overlaid on the exact linear velocity profile."><img loading="lazy" src="assets/images/cfd/couette-flow.png" alt="Numerical and exact Couette-flow velocity profiles overlapping along a straight line" width="1466" height="982"></button><figcaption><span>Exact-solution validation</span><h3>Implicit Couette flow</h3><p>The Crank–Nicolson solution overlays the exact linear steady velocity profile, providing a direct check on the viscous momentum-diffusion implementation.</p></figcaption></figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section--surface">
+            <div class="container"><div class="section-heading reveal"><div><p class="eyebrow">Implemented from first principles</p><h2>Physics &amp; numerical methods.</h2></div><p>The suite exposes the numerical machinery and physical closures instead of delegating the governing solution to a black-box package.</p></div>
+                <div class="capability-grid">
+                    <article class="capability reveal"><h3>Fluid mechanics</h3><ul><li>Mass, momentum &amp; energy conservation</li><li>Inviscid and viscous flow</li><li>Boundary layers &amp; wall shear</li><li>Heat transfer</li></ul></article>
+                    <article class="capability reveal"><h3>Compressible flow</h3><ul><li>Choked and supersonic nozzle flow</li><li>Normal shocks</li><li>Prandtl–Meyer expansion waves</li><li>Perfect-gas thermodynamics</li></ul></article>
+                    <article class="capability reveal"><h3>Transport physics</h3><ul><li>Newtonian viscous stresses</li><li>Sutherland viscosity</li><li>Thermal conductivity</li><li>Fourier heat conduction</li></ul></article>
+                    <article class="capability reveal"><h3>Discretization</h3><ul><li>2nd &amp; 4th-order finite differences</li><li>Uniform, structured &amp; staggered grids</li><li>Boundary-fitted coordinates</li><li>Linear &amp; barycentric interpolation</li></ul></article>
+                    <article class="capability reveal"><h3>Marching &amp; coupling</h3><ul><li>RK4, Lax–Wendroff &amp; MacCormack</li><li>Crank–Nicolson &amp; Thomas solve</li><li>Peaceman–Rachford ADI</li><li>Pressure correction &amp; SIMPLE</li></ul></article>
+                    <article class="capability reveal"><h3>Stability &amp; verification</h3><ul><li>CFL timestep selection</li><li>Pressure-curvature artificial viscosity</li><li>Residual and conservation diagnostics</li><li>Grid and time-step refinement</li></ul></article>
+                </div>
+                <div class="equation reveal" aria-label="Conservation law: partial U over partial t plus partial F over partial x plus partial G over partial y equals zero"><span>Conservation form</span><p>∂<b>U</b>/∂t + ∂<b>F</b>/∂x + ∂<b>G</b>/∂y = 0</p><small>The common structure connecting the compressible application solvers.</small></div>
+            </div>
+        </section>
+
+        <section class="section" id="architecture">
+            <div class="container architecture-grid"><div class="reveal"><p class="eyebrow">Software engineering</p><h2>Modular CFD architecture.</h2><p class="lead">Models define what is solved. Solvers advance the state. Numerical kernels perform one discrete operation.</p><p>Application-specific physics remains separate from reusable grids, numerical operators, linear algebra, plotting, and infrastructure.</p></div>
+                <pre class="code-tree reveal" aria-label="Simplified source code package tree"><code>+cfd
+├── +grids       grid construction
+├── +linalg      tridiagonal systems
+├── +models      equations &amp; exact solutions
+├── +numerics    discrete operators
+├── +physics     transport properties
+├── +plotting    scientific visualization
+├── +solvers
+│   ├── +quasi1D
+│   ├── +supersonic2D
+│   ├── +couette
+│   └── +navierStokes2D
+└── +utils       project infrastructure</code></pre>
+            </div>
+        </section>
+
+        <section class="section section--surface" id="validation">
+            <div class="container"><div class="validation-head reveal"><div><p class="eyebrow">Testing &amp; validation</p><h2>377 passed. 0 failed. 0 incomplete.</h2></div><p>Recorded from the complete MATLAB R2026a final release pass. A capability was not treated as complete simply because it produced a plot.</p></div>
+                <div class="validation-grid">
+                    <article class="reveal"><span>Analytical</span><h3>Known solutions</h3><p>Advection translation, diffusion eigenmodes, harmonic Laplace fields, isentropic area–Mach states, expansion relations, and the linear Couette profile.</p></article>
+                    <article class="reveal"><span>Reference</span><h3>Textbook behavior</h3><p>Anderson station values, downstream states, normal-shock relations, and documented application-case behavior.</p></article>
+                    <article class="reveal"><span>Diagnostics</span><h3>Physical checks</h3><p>Positivity, conservation, boundaries, residuals, wall tangency, mass flow, boundary-layer trends, and grid sensitivity.</p></article>
+                </div>
+                <p class="validation-note reveal"><strong>Transparent limitation:</strong> the arbitrary-field Chapter 9 SIMPLE example remains finite but does not reach its requested convergence tolerance within the default iteration limit. The complete Navier–Stokes case has no exact solution, so it is assessed with unit and manufactured-gradient tests, physical behavior, conservation, and grid sensitivity.</p>
+            </div>
+        </section>
+
+        <section class="section capstone">
+            <div class="container capstone__grid"><div class="reveal"><p class="eyebrow">The culmination</p><h2>The complete compressible Navier–Stokes solver.</h2><p>Chapter 10 brings the project’s earlier layers together: conservation of mass, momentum and energy; compressibility; viscous stresses; temperature-dependent viscosity; heat conduction; application boundaries; stability control; and explicit time marching.</p><blockquote>Everything built earlier becomes infrastructure for a two-dimensional, laminar Mach-4 flat-plate calculation.</blockquote></div><img class="reveal" loading="lazy" src="assets/images/cfd/mach4-flat-plate.png" alt="Mach contours showing the compressible viscous boundary layer developing above a flat plate" width="1460" height="983"></div>
+        </section>
+
+        <section class="section section--surface">
+            <div class="container study-note reveal"><p class="eyebrow">Self-directed study</p><h2>Theory → implementation → testing → validation → visualization.</h2><p>John D. Anderson Jr.’s <em>Computational Fluid Dynamics: The Basics with Applications</em> is the principal educational reference. The suite is an independent implementation created while studying and validating against that presentation; it does not claim the underlying algorithms as original inventions.</p></div>
+        </section>
+
+        <section class="project-cta"><div class="container reveal"><p class="eyebrow">Source, tests &amp; documentation</p><h2>Explore the full CFD suite.</h2><p>Inspect all 258 MATLAB files, 66 test files, 37 examples, 58 documentation pages, validation cases, and reusable solver infrastructure on GitHub.</p><div class="hero__actions"><a class="button button--primary" href="https://github.com/jackcurtis1-sys/MATLABCFD" target="_blank" rel="noopener noreferrer">View CFD Solver Suite on GitHub →</a><a class="button button--secondary" href="index.html#projects">Back to projects</a></div></div></section>
+    </main>
+    <footer class="site-footer"><div class="container site-footer__inner"><p>© <span id="current-year">2026</span> Jack Curtis</p><p>MATLAB · CFD · Aerospace</p><a href="#top">Back to top ↑</a></div></footer>
+    <dialog class="lightbox" aria-label="Expanded CFD result"><button class="lightbox__close" type="button" aria-label="Close expanded image">×</button><img alt=""><p></p></dialog>
+</body>
+</html>

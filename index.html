@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jack Curtis is a physics graduate focused on aerospace engineering, computational fluid dynamics, propulsion, and high-speed flight.">
+    <title>Jack Curtis | Aerospace Engineering Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- Navigation -->
+    <header class="site-header">
+        <nav class="nav container" aria-label="Main navigation">
+            <a class="nav__brand" href="#top" aria-label="Jack Curtis, home">
+                <span class="nav__brand-mark" aria-hidden="true">JC</span><span>Jack Curtis</span>
+            </a>
+            <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+                <span class="sr-only">Open navigation</span><span></span><span></span><span></span>
+            </button>
+            <div class="nav__menu" id="nav-menu">
+                <a href="#about">About</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+                <a class="nav__github" href="https://github.com/jackcurtis1-sys" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <!-- Hero section -->
+        <section class="hero" id="top">
+            <div class="hero__grid container">
+                <div class="hero__content reveal">
+                    <p class="eyebrow">Physics graduate · Engineering portfolio</p>
+                    <h1>Jack Curtis</h1>
+                    <p class="hero__subtitle">Physics <span>|</span> Aerospace Engineering <span>|</span> Fluid Dynamics <span>|</span> Propulsion</p>
+                    <p class="hero__intro"> Physics graduate focused on hypersonic flight, propulsion systems, compressible aerodynamics, and next-generation aircraft. Received departmental honors in physics for work on supersonics, developed a MATLAB CFD solver while studying numerical methods and compressible flow from first principles. Experience conducting honors-level physics research, scientific computing, CAD/mechanical design, and the discipline and leadership developed as an NCAA quarterback. Future planned projects include airfoil simulations and building a model liquid propellant rocket engine at home.  </p>
+                    <div class="hero__actions">
+                        <a class="button button--primary" href="#projects">Explore projects</a>
+                        <a class="button button--secondary" href="#contact">Get in touch</a>
+                    </div>
+                </div>
+                <div class="hero__visual reveal" aria-label="Abstract technical illustration of airflow around an aerospace body">
+                    <div class="flow-lines" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+                    <div class="hero__readout"><span>FOCUS AREA</span><strong>High-Speed Flow</strong><small>CFD · Propulsion · Design</small></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project pages -->
+        <section class="section projects" id="projects">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <div><p class="eyebrow">Selected work</p><h2>Featured Projects</h2></div>
+                    <p>Independent research, analytical studies, and hands-on builds spanning fluid dynamics, propulsion, and mechanical design.</p>
+                </div>
+                <div class="project-grid">
+                    <article class="project-card project-card--wide reveal">
+                        <a class="project-card__image project-card__image--real" href="cfd-project.html" aria-label="View the MATLAB CFD Solver Suite project">
+                            <img src="assets/images/cfd/prandtl-meyer-expansion.png" alt="Mach-number contours from the Prandtl–Meyer expansion solver" width="1486" height="981">
+                        </a>
+                        <div class="project-card__body">
+                            <div class="project-card__meta"><span>01</span><span>MATLAB · Numerical Methods</span></div>
+                            <h3>MATLAB CFD Solver Suite</h3>
+                            <p>A modular CFD environment progressing from numerical methods to two-dimensional compressible Navier–Stokes simulation.</p>
+                            <ul class="tag-list tag-list--compact" aria-label="Project technologies"><li>MATLAB</li><li>CFD</li><li>Navier–Stokes</li><li>Compressible Flow</li></ul>
+                            <a class="project-card__status" href="cfd-project.html">View project <span aria-hidden="true">→</span></a>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <a class="project-card__image project-card__image--real project-card__image--capstone" href="supersonic-capstone.html" aria-label="View the Supersonic Compressible Flow senior capstone project">
+                            <img loading="lazy" src="assets/images/capstone/capstone-title-page.png" alt="Title page of Beyond the Sound Barrier: An Analysis of Supersonic Air Flow" width="1275" height="1650">
+                        </a>
+                        <div class="project-card__body">
+                            <div class="project-card__meta"><span>02</span><span>Carleton College · Departmental Honors</span></div>
+                            <h3>Supersonic Compressible Flow</h3>
+                            <p>Senior physics capstone connecting conservation laws and compressible-flow theory to shock waves, ramjet propulsion, aerodynamic measurement, and the limits of idealized models in hypersonic flight.</p>
+                            <a class="project-card__status" href="supersonic-capstone.html">View project <span aria-hidden="true">→</span></a>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <a class="project-card__image project-card__image--real project-card__image--capstone" href="rocket-engine-analysis.html" aria-label="View the Rocket Engine Analysis project">
+                            <img loading="lazy" src="assets/images/rocket/rocket-title-page.png" alt="First page of Rocket Engine Analysis by Jack Curtis and Chris West" width="1190" height="1540">
+                        </a>
+                        <div class="project-card__body">
+                            <div class="project-card__meta"><span>03</span><span>Thermodynamics · Propulsion</span></div>
+                            <h3>Rocket Engine Analysis</h3>
+                            <p>A paper coauthored with Chris West connecting ideal Brayton-cycle relationships, rocket thrust, and engineering losses to propulsion performance, with the full paper and derivations available.</p>
+                            <a class="project-card__status" href="rocket-engine-analysis.html">View project <span aria-hidden="true">→</span></a>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <a class="project-card__image project-card__image--real project-card__image--cad" href="turbofan-engine.html" aria-label="View the SolidWorks Turbofan project">
+                            <img loading="lazy" src="assets/images/turbofan/cutaway.png" alt="SolidWorks turbofan engine cutaway showing the internal stages" width="1490" height="1012">
+                        </a>
+                        <div class="project-card__body">
+                            <div class="project-card__meta"><span>04</span><span>SolidWorks · Propulsion</span></div>
+                            <h3>Turbofan Engine Assembly</h3>
+                            <p>A SolidWorks assembly study of the fan, compressor stages, combustion region, turbines, and exhaust, with cutaway views, a component gallery, and a downloadable CAD file.</p>
+                            <a class="project-card__status" href="turbofan-engine.html">View project <span aria-hidden="true">→</span></a>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <a class="project-card__image project-card__image--real project-card__image--cad" href="v6-engine.html" aria-label="View the SolidWorks Audi V6 project">
+                            <img loading="lazy" src="assets/images/v6/assembly.png" alt="SolidWorks Audi V6 engine assembly perspective view" width="1568" height="1298">
+                        </a>
+                        <div class="project-card__body">
+                            <div class="project-card__meta"><span>05</span><span>SolidWorks · Mechanisms</span></div>
+                            <h3>Audi V6 Engine Assembly</h3>
+                            <p>A SolidWorks assembly study exploring pistons, connecting rods, the crankshaft, and valve-train components through model views, internal sections, and a downloadable CAD file.</p>
+                            <a class="project-card__status" href="v6-engine.html">View project <span aria-hidden="true">→</span></a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- About section -->
+        <section class="section about" id="about">
+            <div class="container about__grid">
+                <div class="about__heading reveal"><p class="eyebrow">About</p><h2>From first principles to flight.</h2></div>
+                <div class="about__copy reveal">
+                    <p class="about__lead">I’m a physics graduate from Carleton College building toward a career in aerospace engineering.</p>
+                    <p>My physics background taught me to reduce complex systems to their governing principles. I now apply that approach to compressible aerodynamics, CFD, propulsion, and mechanical design—connecting analytical theory with simulation and physical assemblies.</p>
+                    <p>My departmental honors work focused on supersonic airflow, while independent study and project work continue to deepen my experience in numerical methods, gas dynamics, rocket propulsion, CAD, and scientific computing.</p>
+                    <div class="about__facts">
+                        <div><strong>B.A. Physics</strong><span>Carleton College</span></div>
+                        <div><strong>Departmental Honors</strong><span>Supersonic airflow</span></div>
+                        <div><strong>CSWA</strong><span>SolidWorks certified</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical skills -->
+        <section class="section skills" id="skills">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <div><p class="eyebrow">Capabilities</p><h2>Technical Skills</h2></div>
+                    <p>A growing toolkit for analyzing, designing, and communicating engineering systems.</p>
+                </div>
+                <div class="skills__grid">
+                    <article class="skill-group reveal"><span class="skill-group__number">01</span><h3>Analysis &amp; Simulation</h3><ul><li>Computational fluid dynamics</li><li>Numerical methods</li><li>Compressible flow</li><li>Thermodynamics</li><li>Gas dynamics</li></ul></article>
+                    <article class="skill-group reveal"><span class="skill-group__number">02</span><h3>Software &amp; Computing</h3><ul><li>MATLAB</li><li>Python</li><li>Arduino C++</li><li>Git version control</li><li>Scientific visualization</li></ul></article>
+                    <article class="skill-group reveal"><span class="skill-group__number">03</span><h3>Design &amp; Fabrication</h3><ul><li>SolidWorks (CSWA)</li><li>AutoCAD</li><li>Revit</li><li>Engineering drawings</li><li>FMA 3D printing</li></ul></article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact callout -->
+        <section class="contact" id="contact">
+            <div class="container contact__inner reveal">
+                <p class="eyebrow">Contact</p><h2>Let’s build what flies next.</h2>
+                <p>I’m interested in aerospace and mechanical engineering opportunities involving CFD, propulsion, high-speed aerodynamics, and design.</p>
+                <div class="contact__links">
+                    <a class="button button--primary" href="mailto:jackcurtis1@mac.com">jackcurtis1@mac.com</a>
+                    <a href="https://www.linkedin.com/in/jackcurtis3" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+                    <a href="https://github.com/jackcurtis1-sys" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container site-footer__inner"><p>© <span id="current-year">2026</span> Jack Curtis</p><p>Physics · Aerospace · Engineering</p><a href="#top">Back to top ↑</a></div>
+    </footer>
+</body>
+</html>
